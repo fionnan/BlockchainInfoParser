@@ -7,14 +7,12 @@ import numpy as np
 
 f = open('data.csv','r')
 
-#countries = ('US', 'GB', 'DE', 'JP', 'IE', 'CN','RU','None')
 countries = ('AU', 'CA', 'DE', 'IN', 'KR', 'MX', 'PH', 'SE', 'TR')
 
 freader = csv.reader(f)
 hist_data = dict()
 
 for line in freader :
-    #print line
     if line.__len__() > 0 :
         country = line[2].split(' ')[0]
 
@@ -43,6 +41,5 @@ for country in countries:
 
 pyplot.bar(x, counts)
 pyplot.xticks(x + 0.5, countries)
-#pyplot.yscale('symlog')
 pyplot.ylabel('Nodes')
 pyplot.show()
